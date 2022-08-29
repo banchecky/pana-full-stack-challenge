@@ -56,5 +56,5 @@ Getting an error with the node sass module? See https://github.com/sass/node-sas
   - Tertiary: #171AB2
   - Quaternary: #FEC61E
   - Quinary: #1BC98E
-- **SASS** - All styles use the indented style styntax of SASS (no brackets).
+- **SASS** - All styles use the indented style syntax of SASS (no brackets).
 - **Grid System** - We've included a grid system library that is very similar to our internally built grid library. Documentation can be found at `http://flexboxgrid.com/`.
