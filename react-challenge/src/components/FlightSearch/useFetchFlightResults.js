@@ -1,6 +1,9 @@
 import React from 'react';
 
 const FLIGHTS_URL = 'http://localhost:4000/flights';
+// Q: how do we know it will be localhost 4000? 
+// use template strings - `${PORT}/flights`?
+// and have a constants file to help manage
 
 const useFetchFlightResults = () => {
   const [flights, setFlights] = React.useState([]);
@@ -19,6 +22,7 @@ const useFetchFlightResults = () => {
       setFlights(outboundSegmentFlights);
     } catch (error) {
       setError(error);
+      // display error component with error message 
     }
   };
 

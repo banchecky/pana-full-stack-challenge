@@ -8,6 +8,8 @@ const {
 } = require('./helpers/throttle');
 
 router.use(cors());
+// All of our endpoints are /example_endpoint, /flights,
+// and /flights/:search_id, there's no '/' route.
 
 router.get('/example_endpoint', throttleRequest, controller.example);
 
