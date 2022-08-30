@@ -14,13 +14,11 @@ export default function FlightSearch() {
 
   // Only show 10 flight results per page
   // let paginatedFlights = flights.slice(0, 8);
-  const [paginatedFlights, setPaginatedFlights] = useState(flights.slice(0, 8))
-  console.log('paginatedFlights', paginatedFlights)
+  let data = flights.slice(0, 8)
+  const [paginatedFlights, setPaginatedFlights] = useState(data)
 
   let handleOnChange = (event) => {
     setSortBy(event.value)
-    console.log(`after sortby ${JSON.stringify(sortBy)}`)
-    console.log(`ON CHANGE ${event.value}`)
 
     if (event.label === SortByOptions[0].label) {
       let result = [...flights].sort((a, b) => a.score - b.score).slice(0,8)
@@ -35,11 +33,9 @@ export default function FlightSearch() {
         const firstFlight = new Date(a.departsAt);
         const secondFlight = new Date(b.departsAt);
         return firstFlight < secondFlight ? 1 : -1;
-      }
-      );
+      }).slice(0,8);
       setPaginatedFlights(result);
     }
-    console.log('page:', paginatedFlights)
   }
 
   return (
